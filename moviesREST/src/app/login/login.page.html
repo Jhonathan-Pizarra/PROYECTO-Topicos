@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title text-center>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="center">
+    <img class="icon" src="./../../assets/login.jpg" alt="ICON">
+  </div>
+<ion-item>
+  <ion-label position="floating" > Correo electrónico</ion-label>
+  <ion-input type="text" [(ngModel)]="email" name="email"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating" > Contraseña</ion-label>
+  <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+</ion-item>
+<br>
+<ion-button (click)="onSubmitLogin()" expand="block">Entrar</ion-button>
+<br>
+<ion-button color="success" expand="block" routerLink="/registro">Crear cuenta</ion-button>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title color="secondary">Jhonathan Pizarra | Alfonso Heredia</ion-title>
+  </ion-toolbar>
+</ion-footer>
