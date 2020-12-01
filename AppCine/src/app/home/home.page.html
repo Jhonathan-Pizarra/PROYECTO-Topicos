@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-button slot="end" fill="clear" (click)="Onlogout()">
+      <ion-icon style="color:#fff" name="exit" md="md-exit"></ion-icon>
+    </ion-button>
+    <ion-title>
+      PelisESFOT
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!--
+<ion-button slot="start" fill="clear" [routerLink]="'/users'">
+  <ion-icon style="color:#fff" name="people-outline" md="md-people"></ion-icon>
+</ion-button>
+-->
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="term" (ionChange)="searchChanged($event)"></ion-searchbar>
+  <ion-item>
+    <ion-label>Búsqueda</ion-label>
+    <ion-select [(ngModel)]="type" (ionChange)="searchChanged($event)">
+      <ion-select-option seleted="true" value="">Todo</ion-select-option>
+      <ion-select-option value="movie">Peliculas</ion-select-option>
+      <ion-select-option value="series">Series</ion-select-option>
+      <ion-select-option value="episode">Episodios</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-item button *ngFor="let peli of (results | async)" [routerLink]="['/', 'peli', peli.imdbID]">
+      <ion-avatar slot="start">
+        <img src="{{peli.Poster}}" alt="{{peli.Title}}" *ngIf="peli.Poster != 'N/A'">
+      </ion-avatar>
+      <ion-label text-wrap>
+        <h3>{{peli.Title}}</h3>
+        {{peli.Year}}
+      </ion-label>
+      <ion-icon slot="end" *ngIf="peli.Type === 'movie'" name="videocam"></ion-icon>
+      <ion-icon slot="end" *ngIf="peli.Type === 'series'" name="tv"></ion-icon>
+      <ion-icon slot="end" *ngIf="peli.Type === 'episode'" name="tablet-portrait"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>@Tópicos - 2020</ion-title>
+  </ion-toolbar>
+</ion-footer>

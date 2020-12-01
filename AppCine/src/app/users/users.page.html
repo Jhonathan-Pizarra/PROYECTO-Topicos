@@ -1,0 +1,34 @@
+<form (ngSubmit)="nuevoUsuario(myFormUsers.value)" [formGroup]="myFormUsers">
+    <h3 class="box-title m-b-20">Registrar Uusarios</h3>
+    <div class="form-group ">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Nombre" formControlName="nombreF"> </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Edad" formControlName="edadF"> </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input class="form-control" type="text" placeholder="Correo"  formControlName="correoF"> </div>
+    </div>
+
+    <div class="form-group text-center">
+        <div class="col-xs-12 p-b-20">
+            <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Registrar</button>
+        </div>
+    </div>
+</form>
+
+<div class="card" style="width: 18rem;" *ngFor="let i of usuarios">
+    <!-- <img class="card-img-top" [src]="a.url"alt="Card image cap"> -->
+
+    <div class="card-body">
+      <h5 class="card-title">Datos</h5>
+      <p class="card-text">Nombre: {{i.name}}</p>
+      <p class="card-text">Edad: {{i.edad}}</p>
+      <p class="card-text">Correo: {{i.correo}}</p>
+      <button  class="btn btn-block btn-sm btn-info btn-rounded" (click)="actualizarUsuario(i.id)">Editar</button>
+      <button  class="btn btn-block btn-sm btn-danger btn-rounded" (click)="eliminarUsuario(i.id)">Eliminar</button>
+    </div>
+  </div>
