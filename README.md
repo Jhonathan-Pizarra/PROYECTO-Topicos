@@ -1,14 +1,13 @@
-# IONIC_ApiRest
-Herramientas:
+# IONIC_APIRest
 
-> IONIC 4
-> FIREBASE
-> API REST (Peliculas)
-> VISUAL STUDIO CODE
+Integrantes: 
+* Jhonathan Pizarra
+* Alfonso Heredia
 
-Tema:
-Desarrollar una app que me permita buscar y revisar las reseñas de una determinada serie o película, dichos datos lo puede consumir del API REST
+Asignatura: Topicos Espaciales\
+Facultad: ESFOT
 
-link video: https://www.youtube.com/watch?v=FNLjfeX8l7A
+2020-A
+
 link de api: https://www.themoviedb.org/
 
